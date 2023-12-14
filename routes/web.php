@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\InicioControlador;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,3 +14,18 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//Route::get('/',  function(){
+ //   return view('welcome');
+// });
+
+Route::prefix('/')->group(
+    function () {
+        Route::get('',              [InicioControlador::class, 'index'] );
+});
+
+Route::prefix('nuevo/')->group(
+    function () {
+        Route::get('usuario',              [InicioControlador::class, 'NuevoUsuarioForm']);
+    }
+);
