@@ -17,8 +17,8 @@
                             <div class="form-group">
                                 {{ Form::label('password', 'Contraseña', ['class' => 'form-control-label']) }}
                                 {{ Form::password('password', ['class' => 'form-control']) }}
-                                <a href="">¿Olvidaste tu contraseña?</a>
-                                <a href="/nuevo/usuario">Nuevo usuario</a>
+                                <a href="/password">¿Olvidaste tu contraseña?</a>
+                                <a href="/new/user">Nuevo usuario</a>
                             </div>
                             <div class="col-lg-12 loginbttm">
                                 <div class="col-lg-12 login-btm login-button">

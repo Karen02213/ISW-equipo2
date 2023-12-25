@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\InicioControlador;
+use App\Http\Controllers\IndexControlador;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +21,16 @@ use App\Http\Controllers\InicioControlador;
 
 Route::prefix('/')->group(
     function () {
-        Route::get('',              [InicioControlador::class, 'index'] );
+        Route::get('',              [IndexControlador::class, 'index'] );
 });
 
-Route::prefix('nuevo/')->group(
+Route::prefix('new/')->group(
     function () {
-        Route::get('usuario',              [InicioControlador::class, 'NuevoUsuarioForm']);
+        Route::get('user',              [IndexControlador::class, 'NewUserForm']);
+    });
+
+    Route::prefix('password')->group(
+    function () {
+        Route::get('',              [IndexControlador::class, 'PasswordForm']);
     }
 );
